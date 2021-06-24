@@ -88,10 +88,10 @@ def gaussian_kernel(X1, X2, sigma=1.5):
     return Gram
 
 def train_model(train_X,train_Y) :
-    #svc = SVC(C=1.5,kernel= gaussian_kernel) #its accuracy is 72.5678%
+    #svc = SVC(C=1.5,kernel= gaussian_kernel) 
     #Gaussian kernel: K(p, q) = exp (-||p - q||^2/(2*sigma^2)
     #RBF kernel: K(p, q) = exp(-gamma*||p - q||^2)
-    svc=SVC(C=1.5,kernel='rbf',gamma='scale') #its accracy is 78.783986%
+    svc=SVC(C=1.5,kernel='rbf',gamma='scale') 
     svc.fit(train_X,train_Y)
     filename = 'MODEL_FILE.sav'
     pickle.dump(svc, open(filename, 'wb'))
